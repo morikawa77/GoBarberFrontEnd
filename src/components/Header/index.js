@@ -9,6 +9,10 @@ import logo from '~/assets/images/logo-interna.svg';
 export default function Header() {
   const profile = useSelector(state => state.user.profile);
 
+  const avatar = profile.avatar
+    ? profile.avatar.url
+    : 'https://api.adorable.io/avatars/50/abott@adorable.png';
+
   return (
     <Container>
       <Content>
@@ -26,10 +30,11 @@ export default function Header() {
               <Link to="/profile">Meu perfil</Link>
             </div>
             <img
-              src={
-                profile.avatar.url ||
-                'https://api.adorable.io/avatars/50/abott@adorable.png'
-              }
+              // src={
+              //   profile.avatar.url ||
+              //   'https://api.adorable.io/avatars/50/abott@adorable.png'
+              // }
+              src={avatar}
               alt={profile.name}
             />
           </Profile>

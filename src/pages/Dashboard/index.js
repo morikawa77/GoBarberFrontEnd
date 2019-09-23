@@ -42,7 +42,7 @@ export default function Dashboard() {
         return {
           time: `${hour}:00h`,
           past: isBefore(compareDate, new Date()),
-          appointment: response.data.find(a =>
+          appointment: response.data.appointments.find(a =>
             isEqual(parseISO(a.date), compareDate)
           ),
         };

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useRef, useEffect } from 'react';
 import { useField } from '@rocketseat/unform';
 import { Container } from './styles';
@@ -20,7 +19,7 @@ export default function AvatarInput() {
         path: 'dataset.file',
       });
     }
-  }, [ref.current]);
+  }, [ref, registerField]);
 
   async function handleChange(e) {
     const data = new FormData();
